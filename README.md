@@ -1,1 +1,3 @@
-JS TIL Storage 입니다 :-)
+JS TIL
+
+부족한 JS 지식을 채우는 공간입니다 :3
