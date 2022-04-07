@@ -30,8 +30,23 @@ json=JSON.stringify(rabbit, (key, value) =>{
    return key === 'name' ? 'ellie': value;
 });
 
+
 console.log(json);
 
+console.clear()
+//2.JSON to Object
+//parse(json)
+
+json = JSON.stringify(rabbit);
+const obj = JSON.parse(json, (key, value)=>{
+    console.log(`key: ${key}, value: ${value}`);
+    return key === 'birthDate' ? new Date(value): value;
+
+});
+console.log(obj);
+
+// error 발생
+// obj.jump(); 
 
 letstandardObj= {
     'a': 'b',
@@ -65,3 +80,10 @@ console.log('>>',standardObj.array);
 console.log('[]',standardObj['aObj']['aa'])
 console.log('===',standardObj['array'][0]['aa']);
 console.log('===',standardObj['array'][1]['aa']);
+
+
+// 도움을 줄 수 있는 사이트
+//JSON Diff.com
+//JSON Beautifier
+//JSON Parser
+//JSON Validator
