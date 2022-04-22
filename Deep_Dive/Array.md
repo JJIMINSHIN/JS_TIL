@@ -89,3 +89,45 @@
     ```
     
     - fruits.push(...) 호출은 fruits[fruits.length] = ... 하는 것과 같은 효과
+
+### 배열 앞에 무언가 해주는 메서드
+
+- shift
+    - 배열 앞 요소 제거 후 제거한 요소 반환
+    
+    ```jsx
+    let fruits = ["사과", "오렌지", "배"];
+    console.log(fruits.shift()); // 사과
+    console.log(fruits); //[ '오렌지', '배' ]
+    ```
+    
+- unshift
+    - 배열 앞 요소 추가
+    
+    ```jsx
+    let fruits = ["오렌지", "배"];
+    fruits.unshift('사과');
+    console.log(fruits); // 사과,오렌지,배
+    ```
+    
+- push와 unshift는 요소 여러개를 한번에 더해 줄 수 있음
+    
+    ```jsx
+    let fruits = ["사과"];
+    fruits.push("바나나", "오랑지");
+    fruits.unshift("빠인에뽈", "체리");
+    console.log(fruits); //[ '빠인에뽈', '체리', '사과', '바나나', '오랑지' ]
+    ```
+    
+
+### 배열의 내부 동작 원리
+
+- 배열은 객체와 마찬가지로 참조를 통해 복사됨
+    
+    ```jsx
+    fruits = ["바나나"]
+    let arr1 = fruits;
+    console.log( arr1 === fruits ); // true
+    arr1.push("배"); // 참조를 이용해 배열을 수정합니다.
+    console.log( fruits );바나나,배
+    ```
