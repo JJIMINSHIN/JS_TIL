@@ -1,4 +1,4 @@
-const logger = require('logger');
+const logger = require('./logger');
 
 
 //길이가 5인 배열 arr을 만들고 원하는 값으로 초기화 해 보세요.
