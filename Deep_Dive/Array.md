@@ -1,4 +1,6 @@
-- 배열 : 순서가 있는 컬렉션을 저장할 때 쓰는 자료구조
+<br>
+
+## 배열 : 순서가 있는 컬렉션을 저장할 때 쓰는 자료구조<br><br>
 
 ### 배열선언
 
@@ -173,3 +175,161 @@ fruits.shift();
 
 - `pop 메서드`는 요소를 옮기지 않으므로 각 요소는 기존 인덱스 유지**
     - 배열 끝에 무언가 해주는 메서드의 실행속도가 빠른 이유
+
+
+### 반복문
+
+- for 문은 배열을 순회할 때 쓰는 가장 오래된 방법
+    - 순회시 인덱스 사용
+    
+    ```jsx
+    let arr = ['사과', '오렌지', '베'];
+    
+    for(let i=0; i<arr.length; i++){
+        console.log(arr[i]); //사과 오렌지 배
+    }
+    ```
+    
+- 또 다른 순회 문법 : for ... of ...
+    
+    ```jsx
+    let fruits = ["사과", "오렌지", "자두"];
+    
+    // 배열 요소를 대상으로 반복 작업 수행
+    for (let fruit of fruits) {
+        console.log( fruit ); // 사과 오렌지 자두
+    }
+    ```
+    
+    - for ... of 를 사용하면 현재 요소의 인덱스는 얻을 수 없고 값만 얻을 수 있음
+    - 배열의 요소를 대상으로 반복 작업할 때 사용 바람
+- 배열은 객체형에 속하므로 for ... in 사용하는 것도 가능
+    
+    ```jsx
+    let arr = ['사과', '오렌지', '베'];
+    
+    for(let key in arr){
+        console.log(arr[key]); // 사과, 오렌지, 배
+    }
+    ```
+    
+    - for ... in 단점
+        - for ... in 반복문은 모든 프로퍼티 대상으로 순회
+        - 키가 숫자가 아닌 프로퍼티도 순회 대상에 포함
+        
+        ⇒ 필요없는 프로퍼티들이 문제 일으킬 가능성 생김
+        
+
+### length 프로퍼티
+
+- 배열 내 요소의 개수가 아니라 가장 큰 인덱스에 1을 더한 값
+
+```jsx
+let fruits =[];
+fruits[123] ='사과';
+console.log(fruits.length)
+```
+
+- 쓰기 가능
+- 값을 수동으로 증가시 변화 X → 값을 감소시키면 배열이 잘림 → 짧아진 배열은 다시 되돌릴 수 없음
+
+```jsx
+let fruits =[];
+fruits[123] ='사과';
+// console.log(fruits.length)
+
+let arr = [1, 2, 3, 4, 5];
+
+arr.length =2;
+console.log(arr); //[ 1, 2 ]
+
+arr.length =5;
+console.log(arr); //[ 1, 2, <3 empty items> ]
+```
+
+### new Array()
+
+- [ ] 사용시 더 짧은 문법으로 배열을 만들수 있고 다루기 까다로워 잘 사용되지 않음
+
+```jsx
+let arr = new Array("사과", "배", "기타");
+console.log(arr); //[ '사과', '배', '기타' ]
+```
+
+- 숫자형 인수 하나를 넣어 new Array 호출 → 배열 만들어짐
+    - 요소가 없는 반면 길이는 인수와 같아짐
+    
+    ```jsx
+    let arr = new Array(2);
+    console.log(arr[0]); //undefined
+    console.log(arr[1]); //undefined
+    console.log(arr.length); //2
+    ```
+    
+    - new Array(num) 이용해 만든 배열의 요소는 모두 undefined
+
+### 다차원 배열
+
+- 배열 역시 배열의 요소가 될 수 있음
+- 행렬을 저장하는 용도
+
+```jsx
+console.log(matrix[0][0]); //1
+```
+
+### toString
+
+- 요소를 쉼표로 구분한 문자열 반환
+
+```jsx
+let arr = [1, 2, 3];
+
+console.log( arr ); // 1,2,3
+console.log( String(arr) === '1,2,3' ); // true
+```
+
+예1)
+
+```jsx
+console.log([]+1); //1
+console.log([1]+1); //11
+console.log([1,2]+1); //1, 21
+```
+
+- 배열엔 `Symbol.toPrimitive`나 `valueOf` 메서드 없음
+- 문자열로의 형 변환이 일어나 `[]`는 빈 문자열, `[1]`은 문자열 `“1”`, `[1,2]`는 문자열 `"1,2"`
+- +는 피연산자 중 하나가 문자열인 경우 나머지 피연산자도 문자열로 변환
+
+예2) 위와 동일하게 작용
+
+```jsx
+console.log( "" + 1 ); // "1"
+console.log( "1" + 1 ); // "11"
+console.log( "1,2" + 1 ); // "1,21"
+```
+
+### 요약
+
+배열은 특수한 형태의 객체로, 순서가 있는 자료를 저장하고 관리하는 용도에 최적화된 자료구조
+
+- 선언 방법
+    
+    ```jsx
+    // 대괄호 (가장 많이 쓰이는 방법임)
+    let arr = [item1, item2...];
+    
+    // new Array (잘 쓰이지 않음)
+    let arr = new Array(item1, item2...);
+    ```
+    
+
+- 연산을 사용하면 배열을 데큐처럼 사용할 수 있음
+    - `push(...items)` - items 배열 끝에 더해줌
+    - `pop()` - 배열 끝 요소 제거  → 제거한 요소 반환
+    - `shift()` - 배열 처음요소 제거 → 제거한 요소 반환
+    - `unshift(...items)` - items 배열 처음에 더해줌
+
+- 아래 방법을 사용하면 모든 요소를 대상으로 반복 작업을 할 수 있음
+    - `for ( let i =0; i<arr.length; i++)` - 가장 빠른 방법이고 오래된 브라우저와도 호환
+    - `for ( let item of arr)` - 배열 요소에만 사용되는 모던한 문법
+    - `for ( let i in arr )` - 배열에서는 절대 사용 X !!
