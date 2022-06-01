@@ -16,3 +16,11 @@ function solution(arr){
 
 let result = solution([1,2,3,4,5])
 logger.info(result);
+
+//배열 arr의 앞에 "begin", 뒤에 "end" 문자열을 엘리먼트로 추가하세요.
+
+var arr=[1,2,3];
+arr.push("end");
+arr.unshift("begin");
+
+console.log(arr);
