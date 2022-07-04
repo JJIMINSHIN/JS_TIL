@@ -4,7 +4,6 @@ function solution(a, b, c){
     if(a<b) answer = a;
     else answer = b;
     if(c<answer) answer = c
-
     return answer;
 }
 
