@@ -7,4 +7,14 @@ function solution(arr){
     }
     return min
 }
+console.log('solution',solution([5, 3, 7, 11, 2, 15, 17]))
+
+
+//5번 추가보충(For문 사용 X)
+
+function sol2(arr){
+    let answer = Math.min(...arr);  //Math.min.apply(null, arr)
+    return answer;
+}
 console.log('sol',solution([5, 3, 7, 11, 2, 15, 17]))
+
