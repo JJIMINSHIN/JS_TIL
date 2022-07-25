@@ -1,5 +1,4 @@
 function solution(a, b, c){
-    
     let max = a;
     let sum = a+b+c;
     if(max <b ) max = b;
