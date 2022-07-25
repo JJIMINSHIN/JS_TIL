@@ -6,5 +6,4 @@ function num(n){
     return sum;
 }
 
-
 console.log(num(6));
