@@ -10,8 +10,7 @@ function solution(arr){
 console.log('solution',solution([5, 3, 7, 11, 2, 15, 17]))
 
 
-//5번 추가보충(For문 사용 X)
-
+//5번 추가보충(for문 사용 X)
 function sol2(arr){
     let answer = Math.min(...arr);  //Math.min.apply(null, arr)
     return answer;
