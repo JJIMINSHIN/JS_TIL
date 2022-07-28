@@ -5,7 +5,7 @@ const Atoshap = (str) => {
         return newStr;
     }
 };
-console.log( Atoshap('banana'));
+console.log(Atoshap('banana'));
 
 
 
@@ -14,5 +14,4 @@ const Atoshap2 = (str) => {
     str = str.split('').map((item) => item === 'A' ? '#' : item).join('')
     return str;
 };
-
 console.log(Atoshap2('banana'));
