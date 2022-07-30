@@ -1,4 +1,4 @@
-for..of : 개수만큼 반 하나씩 뽑아 반복문 실행
+// for..of : 개수만큼 반 하나씩 뽑아 반복문 실행
 
 const userList = [
     {name: 'jichi', age: 1, score: 97},
