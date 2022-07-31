@@ -11,7 +11,7 @@ const input2 =(n, str) =>{
     let maxLength = Math.max(...wordLength);
     let result = wordLength.indexOf(maxLength);
     return str[result]
-
+    
 }
 
 console.log(input(5, ['teacher','time','student','beautiful','good']));
