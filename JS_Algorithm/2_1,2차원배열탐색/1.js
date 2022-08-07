@@ -1,4 +1,4 @@
-const test = ( arr) =>{
+const test = (arr) =>{
     let newOut =[];
     arr.reduce((acc, cur) =>{
         if(cur > acc) newOut.push(cur);
