@@ -8,10 +8,20 @@ function sol(n,arr){
         for(let j=0; j<n; j++){
             row += arr[i][j]
             col += arr[j][i]
-            // console.log('row : ' ,row,'col : ' , col)
         }
         result = Math.max(row, col)
     }
+
+    //대각선 구하기
+    for(let i=0; i<n; i++){
+        diagonal += arr[i][i];
+        //반대 대각선
+        reverse += arr[i][n-i-1];
+
+    }
+
+    result = Math.max(result, diagonal, reverse);
+    return result
 }
 
 let n = 5;
