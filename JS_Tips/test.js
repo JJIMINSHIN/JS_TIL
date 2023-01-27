@@ -1,5 +1,5 @@
-let [firstName, surname] = "Bora,Lee".split(',');
+let guest = "Jane";
+let admin ="Pete";
 
-
-console.log(firstName)// Bora
-console.log(surname) //Lee
+[guest, admin] =  [admin, guest];
+console.log(`${guest} ${admin}`);
