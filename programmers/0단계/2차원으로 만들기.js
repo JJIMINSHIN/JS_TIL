@@ -2,12 +2,13 @@
 
 function solution(num_list, n) {
     var answer = [];
-    while(num_list.length !=0){
-        answer.push(num_list.splice(0,n))
+    for(let i =0; i<num_list.length; i+n){
+        console.log("i  :  ",i,  "   n  :  ", n)
+        answer.push(num_list.splice(0,n));
     }
     return answer;
 }
 
 
-let arr =[1, 2, 3, 4, 5, 6, 7, 8]	;
-console.log(solution(arr, 2))
+let arr =[100, 95, 2, 4, 5, 6, 18, 33, 948]	;
+console.log(solution(arr, 3))
