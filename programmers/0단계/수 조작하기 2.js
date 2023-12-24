@@ -1,4 +1,11 @@
-//수 조작하기 2
+/*
+ 수 조작하기 2
+ num[1]-num[0] = 1 이면 w
+ num[1]-num[0] = -1 이면 s
+ num[1]-num[0] = 10 이면 d
+ num[1]-num[0] = -10 이면 a
+ 문제 이해하는데 시간을 제일 오래 잡아먹은 문제..
+*/
 
 
 function solution(numLog) {
